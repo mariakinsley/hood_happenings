@@ -1,0 +1,16 @@
+<%= form_for @event do |f| %>
+<%= f.label  :name, "Name of the Event" %><br>
+<%= f.text_field :name, autofocus: true %>
+<%= f.label  :description, "description of the Event" %><br>
+<%= f.text_field :description%><br>
+<%= f.label :startdate,"Start Date" %><br>
+<%= f.date_field :startdate %>
+<%= f.label :enddate, "End Date"%>
+<%= f.date_field :enddate%>
+<%= f.label :location, "location"%>
+<%= f.text_field :location %>
+<%= f.label :cost, "Cost"%>
+<%= f.number_field :cost%>
+<%= f.file_field :image %><br>
+<%= f.submit %>
+<% end %>
