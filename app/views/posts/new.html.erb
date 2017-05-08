@@ -1,0 +1,15 @@
+<h1>Lost and Found</h1>
+<%= form_for @post do |f| %>
+  <%= f.label  :name, "Name of Item" %><br>
+  <%= f.text_field :name, autofocus: true %><br>
+  <%= f.label  :description, "Description of Item" %><br>
+  <%= f.text_field :description%><br>
+  <%= f.label :date,"Date lost/found" %><br>
+  <%= f.date_field :date %><br>
+  <%= f.label :location, "location" %><br>
+  <%= f.text_field :location %><br>
+  <%= f.file_field :image %><br>
+  <%= f.label :variety %><br>
+  <%= f.select :variety, ["lost", "found"] %><br>
+  <%= f.submit %>
+<% end %>

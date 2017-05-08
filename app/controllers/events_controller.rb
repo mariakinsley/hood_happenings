@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
+
   def index
   end
 
@@ -7,7 +9,6 @@ class EventsController < ApplicationController
   end
 
   def create
-    puts "yooooooo" + event_params.inspect + current_user.id.inspect
     @event = Event.new(event_params)
     @event.user_id = current_user.id
     if @event.save
@@ -18,8 +19,6 @@ class EventsController < ApplicationController
       render :new
     end
   end
-
-
 
 
   # strong params
