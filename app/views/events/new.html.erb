@@ -1,16 +1,3 @@
-<%= form_for @event do |f| %>
-  <%= f.label  :name, "Name of the Event" %><br>
-  <%= f.text_field :name, autofocus: true %><br>
-  <%= f.label  :description, "description of the Event" %><br>
-  <%= f.text_field :description%><br>
-  <%= f.label :startdate,"Start Date" %><br>
-  <%= f.date_field :startdate %><br>
-  <%= f.label :enddate, "End Date"%><br>
-  <%= f.date_field :enddate%><br>
-  <%= f.label :location, "location"%><br>
-  <%= f.text_field :location %><br>
-  <%= f.label :cost, "Cost"%><br>
-  <%= f.number_field :cost%><br>
-  <%= f.file_field :image %><br>
-  <%= f.submit %>
-<% end %>
+<h1>New Event</h1>
+<%= render "errors" %>
+<%= render "form" %>

@@ -20,6 +20,31 @@ class EventsController < ApplicationController
     end
   end
 
+  def edit
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    if @event.update(event_params)
+      flash[:notice] = "Your event has been updated."
+      redirect_to root_path
+    else
+      flash[:alert] = "There was a problem updating your event."
+      render :edit
+    end
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    if @event.destroy
+      flash[:notice] = "Event was deleted."
+      redirect_to root_path
+    else
+      flash[:notice] = "Event could not be deleted"
+      render :edit
+    end
+  end
 
   # strong params
   def event_params
