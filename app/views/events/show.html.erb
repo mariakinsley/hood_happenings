@@ -1,14 +1,19 @@
-<div class="center">
+<div class="event">
   <%= @event.name %><br>
   <%= image_tag @event.image.url(:thumb) %><br>
   <%= @event.description %><br>
   <%= @event.location %><br>
-  <%= @event.startdate %><br>
-  <%= @event.enddate %><br>
-  <%= @event.cost %><br>
+  <%= @event.startdate.strftime"%d %B %Y %I:%M %p" %><br>
+  <%= @event.enddate.strftime"%d %B %Y %I:%M %p" %><br>
+  <% if @event.cost == 0 %>
+    FREE
+  <% else %>
+    <%= @event.cost %><br>
+  <% end %>
 </div>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLEMAPS_API_KEY']%>&callback=initMap"
 type="text/javascript"></script>
+
 
 <div id="map"></div>

@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @events = Event.all
@@ -18,7 +18,7 @@ class EventsController < ApplicationController
     @event.user_id = current_user.id
     if @event.save
       flash[:notice] = "Your event was created!"
-      redirect_to root_path
+      redirect_to events_path
     else
       flash[:alert] = "There was a problem creating your event."
       render :new
