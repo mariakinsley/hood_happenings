@@ -11,4 +11,11 @@ var map;
           position: {lat: 40.7080, lng: -74.0067},
           map: map
         });
+        var infoWindowOptions = {
+            content: 'NYCDA!'
+            };
+        var infoWindow = new google.maps.InfoWindow(infoWindowOptions);
+            google.maps.event.addListener(marker,'click',function(e){
+            infoWindow.open(map, marker);
+          });
       }

@@ -16,6 +16,8 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user_id = current_user.id
+    @event.latitude = Geokit::Geocoders::GoogleGeocoder.geocode(params[:event][:streetaddress]).lat
+    @event.longitude = Geokit::Geocoders::GoogleGeocoder.geocode(params[:event][:streetaddress]).lng
     if @event.save
       flash[:notice] = "Your event was created!"
       redirect_to events_path
@@ -31,6 +33,8 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
+    @event.latitude = Geokit::Geocoders::GoogleGeocoder.geocode(params[:event][:streetaddress]).lat
+    @event.longitude = Geokit::Geocoders::GoogleGeocoder.geocode(params[:event][:streetaddress]).lng
     if @event.update(event_params)
       flash[:notice] = "Your event has been updated."
       redirect_to root_path
@@ -53,7 +57,7 @@ class EventsController < ApplicationController
 
   # strong params
   def event_params
-    params.require(:event).permit(:name, :description, :startdate, :enddate, :location, :cost, :image)
+    params.require(:event).permit(:name, :description, :startdate, :enddate, :location, :streetaddress, :city, :state, :zip, :cost, :image)
   end
 
 end
