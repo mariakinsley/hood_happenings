@@ -1,4 +1,10 @@
 <h1>All Events</h1>
-<%= month_calendar do |date| %>
+<%= month_calendar events: @events do |date, events| %>
   <%= date.day %>
+  <% events.each do |event| %>
+  <div class="">
+    <%= link_to "#{event.name}", event_path(event.id) %>
+
+  </div>
+  <% end %>
 <% end %>
