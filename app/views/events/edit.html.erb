@@ -1,5 +1,7 @@
-<h1>Edit Event</h1>
+<h2>Edit Event</h2>
 
 <%= render "errors" %>
 <%= render "form" %>
-<%= link_to "Delete Event", event_path(@event), method: :delete %>
+<div class="center">
+  <%= link_to "Delete Event", event_path(@event), method: :delete %>
+</div>

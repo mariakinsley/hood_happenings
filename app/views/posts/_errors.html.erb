@@ -1,0 +1,8 @@
+<div class="center">
+  <% if @post.errors.full_messages.any? %>
+    <% @post.errors.full_messages.each do |error_message| %>
+      <%= error_message %>
+      <br />
+    <% end %>
+  <% end %>
+</div>

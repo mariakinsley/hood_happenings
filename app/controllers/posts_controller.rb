@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
+
   def index
+
   end
 
   def new
@@ -19,10 +21,35 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      flash[:notice] = "Your post has been updated."
+      redirect_to root_path
+    else
+      flash[:alert] = "There was a problem updating your post."
+      render :edit
+    end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    if @post.destroy
+      flash[:notice] = "Your post was deleted."
+      redirect_to root_path
+    else
+      flash[:alert] = "There was a problem deleting your post."
+      render :edit
+    end
+  end
 
   # strong params
   def post_params
     params.require(:post).permit(:name, :description, :date, :location, :variety, :photo)
-
   end
+
 end

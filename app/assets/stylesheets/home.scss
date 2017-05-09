@@ -1,3 +1,91 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$mainfont: 'Quicksand', sans-serif;
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  font-family: $mainfont;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.center {
+  text-align: center;
+}
+
+ button:focus, textarea:focus, select:focus {
+    outline: none;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: inset 0 0 0px 9999px white;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 1px solid black;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+}
+
+input {
+  font-family: $mainfont;
+  font-size: 20px;
+  margin: 10px;
+  border: none;
+  border-bottom: 1px solid gray;
+  width: 370px;
+}
+
+textarea {
+  font-family: $mainfont;
+  font-size: 20px;
+  margin: 10px;
+  resize: none;
+}
+
+input[type="submit"] {
+  border: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  margin: 20px;
+  padding: 10px;
+  // width: 120px;
+}
+
+input[type="file"] {
+  text-transform: uppercase;
+  font-family: $mainfont;
+}
+
+
+label {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+select {
+  font-family: $mainfont;
+  font-size: 20px;
+}
+
+a {
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+}

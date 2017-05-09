@@ -2,6 +2,7 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
+
   end
 
   def new
@@ -38,10 +39,10 @@ class EventsController < ApplicationController
   def destroy
     @event = Event.find(params[:id])
     if @event.destroy
-      flash[:notice] = "Event was deleted."
+      flash[:notice] = "Your event was deleted."
       redirect_to root_path
     else
-      flash[:notice] = "Event could not be deleted"
+      flash[:alert] = "There was a problem deleting your event."
       render :edit
     end
   end

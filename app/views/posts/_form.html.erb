@@ -1,18 +1,16 @@
 <div class="center">
-  <%= form_for @event do |f| %>
-    <%= f.label  :name, "Name of Event" %><br>
+  <%= form_for @post do |f| %>
+    <%= f.label  :name, "Name of Item" %><br>
     <%= f.text_field :name, autofocus: true %><br>
-    <%= f.label  :description, "Description of Event" %><br>
+    <%= f.label  :description, "Description of Item" %><br>
     <%= f.text_field :description%><br>
-    <%= f.label :startdate,"Start Date" %><br>
-    <%= f.date_field :startdate %><br>
-    <%= f.label :enddate, "End Date"%><br>
-    <%= f.date_field :enddate%><br>
-    <%= f.label :location, "location"%><br>
+    <%= f.label :date,"Date lost/found" %><br>
+    <%= f.date_field :date %><br>
+    <%= f.label :location, "location" %><br>
     <%= f.select :location, ["Noho","Soho","Lower East Side", "Upper West  side", "Upper East Side", "West Village", "East Village", "Hell's Kitchen", "Financial District", "Wall St.", "Midtown", "Harlem", "Washington Heights", "Chelsea", "Tribeca", "Chinatown", "Murray Hill"] %><br>
-    <%= f.label :cost, "Cost"%><br>
-    <%= f.number_field :cost%><br>
     <%= f.file_field :image %><br>
+    <%= f.label :variety, "Type" %><br>
+    <%= f.select :variety, ["lost", "found"] %><br>
     <%= f.submit %>
   <% end %>
 </div>
