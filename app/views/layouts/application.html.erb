@@ -4,6 +4,8 @@
     <title>HoodHappenings</title>
     <%= csrf_meta_tags %>
 
+    <%= favicon_link_tag 'houseicon.png' %>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
@@ -12,15 +14,17 @@
   </head>
 <header>
   <nav>
-    <%= link_to "Home", root_path %>
-    <% if user_signed_in? %>
-      <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-      <%= link_to "New Event", new_event_path %>
-      <%= link_to "New Post", new_post_path %>
-    <% else %>
-      <%= link_to "Sign Up", new_user_registration_path %>
-      <%= link_to "Sign In", new_user_session_path %>
-    <% end %>
+    <div class="center">
+      <%= link_to "Home", root_path, :class => 'navlink'  %>
+      <% if user_signed_in? %>
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navlink' %>
+        <%= link_to "New Event", new_event_path, :class => 'navlink' %>
+        <%= link_to "New Post", new_post_path, :class => 'navlink' %>
+      <% else %>
+        <%= link_to "Sign Up", new_user_registration_path, :class => 'navlink' %>
+        <%= link_to "Sign In", new_user_session_path, :class => 'navlink' %>
+      <% end %>
+    </div>
   </nav>
 </header>
 
