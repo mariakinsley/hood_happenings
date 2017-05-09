@@ -5,9 +5,9 @@
     <%= f.label  :description, "Description of Event" %><br>
     <%= f.text_field :description%><br>
     <%= f.label :startdate,"Start Date" %><br>
-    <%= f.date_field :startdate %><br>
+    <%= f.datetime_select :startdate %><br>
     <%= f.label :enddate, "End Date"%><br>
-    <%= f.date_field :enddate%><br>
+    <%= f.datetime_select :enddate%><br>
     <%= f.label :location, "location"%><br>
     <%= f.select :location, ["Noho","Soho","Lower East Side", "Upper West  side", "Upper East Side", "West Village", "East Village", "Hell's Kitchen", "Financial District", "Wall St.", "Midtown", "Harlem", "Washington Heights", "Chelsea", "Tribeca", "Chinatown", "Murray Hill"] %><br>
     <%= f.label :cost, "Cost"%><br>

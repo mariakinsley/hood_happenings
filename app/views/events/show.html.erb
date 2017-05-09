@@ -1,7 +1,14 @@
-<%= @event.name %>
-<%= image_tag @event.image.url(:thumb) %>
-<%= @event.description %>
-<%= @event.location %>
-<%= @event.startdate %>
-<%= @event.enddate %>
-<%= @event.cost %>
+<div class="center">
+  <%= @event.name %><br>
+  <%= image_tag @event.image.url(:thumb) %><br>
+  <%= @event.description %><br>
+  <%= @event.location %><br>
+  <%= @event.startdate %><br>
+  <%= @event.enddate %><br>
+  <%= @event.cost %><br>
+</div>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLEMAPS_API_KEY']%>&callback=initMap"
+type="text/javascript"></script>
+
+<div id="map"></div>
