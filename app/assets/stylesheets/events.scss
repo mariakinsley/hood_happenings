@@ -84,6 +84,14 @@ $todaycolor: #fcdbe7;
 
   .has-events {}
 }
+.calendar-title {
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: 10px;
+}
+.calendar-heading {
+  margin-left: 10px;
+}
 
 // show page css
 .event {
@@ -93,6 +101,7 @@ $todaycolor: #fcdbe7;
   text-align: center;
   font-size: 20px;
 }
+
 
 
 // map css

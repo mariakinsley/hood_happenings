@@ -3,7 +3,7 @@
   <h3>Lost</h3>
   <% @lostposts.each do |lostpost| %>
     <%= image_tag lostpost.image.url(:medium) %><br>
-    <%= lostpost.date.strftime"%d %B %Y" %><br>
+    <%= lostpost.date.strftime"%B %d, %Y" %><br>
     <%= lostpost.name %><br>
     <%= lostpost.description %><br>
     <%= link_to "Contact", "/posts/#{lostpost.id}/contact" %><br>
@@ -14,7 +14,7 @@
   <h3>Found</h3>
   <% @foundposts.each do |foundpost| %>
     <%= image_tag foundpost.image.url(:medium) %><br>
-    <%= foundpost.date.strftime"%d %B %Y" %><br>
+    <%= foundpost.date.strftime"%B %d, %Y" %><br>
     <%= foundpost.name %><br>
     <%= foundpost.description %><br>
     <%= link_to "Contact", "/posts/#{foundpost.id}/contact" %><br>

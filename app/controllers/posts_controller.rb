@@ -69,6 +69,7 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+  private
   # strong params
   def post_params
     params.require(:post).permit(:name, :description, :date, :location, :variety, :image)
