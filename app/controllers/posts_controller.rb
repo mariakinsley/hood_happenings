@@ -2,6 +2,8 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
+    @lostposts = Post.where(variety: "lost")
+    @foundposts = Post.where(variety: "found")
 
   end
 
@@ -14,7 +16,7 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
     if @post.save
       flash[:notice] = "Your post was created!"
-      redirect_to root_path
+      redirect_to posts_path
     else
       flash[:alert] = "There was a problem creating your post."
       render :new
@@ -29,7 +31,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.update(post_params)
       flash[:notice] = "Your post has been updated."
-      redirect_to root_path
+      redirect_to posts_path
     else
       flash[:alert] = "There was a problem updating your post."
       render :edit
@@ -49,7 +51,7 @@ class PostsController < ApplicationController
 
   # strong params
   def post_params
-    params.require(:post).permit(:name, :description, :date, :location, :variety, :photo)
+    params.require(:post).permit(:name, :description, :date, :location, :variety, :image)
   end
 
 end
