@@ -1,0 +1,12 @@
+<h2>Contact</h2>
+<div class="center">
+  <%= form_tag("/posts/contactname", :method => "post") do %>
+  <%= label_tag(:from) %><br>
+  <%= text_field_tag(:from) %><br>
+  <%= label_tag(:subject, "Subject") %><br>
+  <%= text_field_tag(:subject) %><br>
+  <%= label_tag(:content)%><br>
+  <%= text_area_tag(:content)%><br>
+  <%= submit_tag("send") %>
+<% end %>
+</div>

@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
+  require 'sendgrid-ruby'
+
 
   def index
     @lostposts = Post.where(variety: "lost")
@@ -47,6 +49,24 @@ class PostsController < ApplicationController
       flash[:alert] = "There was a problem deleting your post."
       render :edit
     end
+  end
+
+  def contact
+
+  end
+
+  def contactname
+    from = SendGrid::Email.new(email: params[:from])
+    subject = params[:subject]
+    to = SendGrid::Email.new(email: 'sarahrosepainting@gmail.com')
+    content = SendGrid::Content.new(type: 'text/plain', value: params[:content])
+    mail = SendGrid::Mail.new(from, subject, to, content)
+    sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
+
+    response = sg.client.mail._('send').post(request_body: mail.to_json)
+    puts response.status_code
+    puts response.body
+    redirect_to posts_path
   end
 
   # strong params

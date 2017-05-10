@@ -5,5 +5,8 @@ Rails.application.routes.draw do
   root to: "home#index"
   resources :events
   resources :posts
-  
+  get "/posts/:id/contact/" => "posts#contact"
+
+  post "/posts/contactname" => "posts#contactname"
+
 end
