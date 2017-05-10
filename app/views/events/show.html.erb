@@ -10,10 +10,20 @@
   <% else %>
     <%= @event.cost %><br>
   <% end %>
+
 </div>
 
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLEMAPS_API_KEY']%>&callback=initMap"
-type="text/javascript"></script>
+<script type="text/javascript">
+  let locationTest = {
+    lat: <%= @event.latitude %>,
+    lng: <%= @event.longitude %>
+  }
+  let locationName = "<%= @event.name %>"
+
+</script>
+ <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLEMAPS_API_KEY']%>&callback=initMap"
+type="text/javascript">
+</script>
 
 
 <div id="map"></div>
