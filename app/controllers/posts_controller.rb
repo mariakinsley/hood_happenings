@@ -52,13 +52,16 @@ class PostsController < ApplicationController
   end
 
   def contact
-
+    @post = Post.find(params[:id])
   end
 
   def contactname
-    from = SendGrid::Email.new(email: params[:from])
+    @post = Post.find(params[:id])
+    @email = @post.user.email
+    @from = current_user.email
+    from = SendGrid::Email.new(email: @from )
     subject = params[:subject]
-    to = SendGrid::Email.new(email: 'sarahrosepainting@gmail.com')
+    to = SendGrid::Email.new(email: @email)
     content = SendGrid::Content.new(type: 'text/plain', value: params[:content])
     mail = SendGrid::Mail.new(from, subject, to, content)
     sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])

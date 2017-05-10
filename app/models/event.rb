@@ -1,7 +1,7 @@
 class Event < ApplicationRecord
   belongs_to :user
 
-has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>"}, default_url: "events_medium.jpg"
+has_attached_file :image, styles: { medium: "400x400>", thumb: "100x100>"}, default_url: "event_:style.jpg"
  validates_attachment_content_type :image, content_type:  /\Aimage\/.*\z/
 
 validates_presence_of :name, :description, :startdate, :enddate, :location, :cost

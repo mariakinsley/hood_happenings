@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   resources :posts
   get "/posts/:id/contact/" => "posts#contact"
 
-  post "/posts/contactname" => "posts#contactname"
+  post "/posts/:id/contactname" => "posts#contactname"
 
 end
