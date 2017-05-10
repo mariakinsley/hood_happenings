@@ -82,9 +82,13 @@
   .has-events {}
 }
 
+// show page css
 .event {
   float: left;
   width: 500px;
+  margin: 50px;
+  text-align: center;
+  font-size: 20px;
 }
 
 
@@ -95,4 +99,5 @@
   margin: 0;
   width: 500px;
   float: right;
+  margin: 40px 80px 40px 40px;
 }

@@ -78,11 +78,13 @@ input[type="file"] {
 label {
   font-size: 20px;
   text-transform: uppercase;
+  padding: 10px;
 }
 
 select {
   font-family: $mainfont;
   font-size: 20px;
+  margin: 20px 10px 20px 10px;
 }
 
 a {
