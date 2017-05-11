@@ -2,7 +2,8 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @events = Event.all
+    puts "yoooooooo"+params[:location].inspect
+    @events = Event.where(location: params[:location])
   end
 
   def show
@@ -21,7 +22,7 @@ class EventsController < ApplicationController
     @event.longitude = Geokit::Geocoders::GoogleGeocoder.geocode(params[:event][:streetaddress] + params[:event][:city] + params[:event][:state]).lng
     if @event.save
       flash[:notice] = "Your event was created!"
-      redirect_to events_path
+      redirect_to event_path(@event.id)
     else
       flash[:alert] = "There was a problem creating your event."
       render :new
@@ -33,7 +34,7 @@ class EventsController < ApplicationController
     if @event.user_id == current_user.id
     else
       flash[:notice] = "You do not have access to that page."
-      redirect_to events_path
+      redirect_to event_path(@event.id)
     end
   end
 
@@ -54,11 +55,15 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     if @event.destroy
       flash[:notice] = "Your event was deleted."
-      redirect_to events_path
+      redirect_to root_path
     else
       flash[:alert] = "There was a problem deleting your event."
       render :edit
     end
+  end
+
+  def map
+    
   end
 
   private
