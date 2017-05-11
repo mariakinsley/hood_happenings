@@ -7,14 +7,12 @@
     lng: event.longitude,
     marker: event.name
     } %>
-
   <% @localarray.push(@location) %>
 <% end %>
 
 <%= puts "oooooooooo" + @localarray.to_s %>
 <script type="text/javascript">
   let locationTest = <%=raw @localarray.to_json %>
-
 </script>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLEMAPS_API_KEY']%>&callback=initMap"
@@ -22,4 +20,4 @@ type="text/javascript">
 </script>
 
 
-<div id="map"></div>
+<div id="map" class="fullmap"></div>

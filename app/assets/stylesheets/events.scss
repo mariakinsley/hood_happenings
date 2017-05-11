@@ -107,10 +107,23 @@ $todaycolor: #fcdbe7;
 // map css
 
 #map{
+
+}
+
+.showmap {
   height: 500px;
   margin: 0;
   width: 500px;
   float: right;
   margin: 40px 80px 40px 40px;
   border: 2px solid black;
+}
+
+.fullmap {
+  height: 500px;
+  margin: 0 auto;
+  width: 800px;
+  text-align: center;
+  border: 2px solid black;
+
 }

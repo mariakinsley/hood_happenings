@@ -99,7 +99,11 @@ a {
 .navlink {
   font-size: 20px;
   color: black;
-  padding: 30px;
+  padding: 16px;
+}
+
+.navlink:hover {
+  background-color: $accentcolor;
 }
 
 .dropbtn {
