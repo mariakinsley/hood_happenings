@@ -2,10 +2,10 @@
 // # All this logic will automatically be available in application.js.
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 //
+
+
 var map;
       function initMap() {
-        console.log(locationTest.lat);
-        console.log(locationTest.lng);
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 40.7549, lng: -73.9840},
           zoom: 12

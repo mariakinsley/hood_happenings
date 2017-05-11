@@ -63,7 +63,7 @@ class EventsController < ApplicationController
   end
 
   def map
-    
+    @events = Event.all
   end
 
   private

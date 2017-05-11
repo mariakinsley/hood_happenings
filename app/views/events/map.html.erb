@@ -1,4 +1,23 @@
 <h2>Events Map</h2>
+<% @latarrray = [] %>
+<% @events.each do |event| %>
+  <%= @latarray.push(event.latitude) %>
+
+<% end %>
+
+<script type="text/javascript">
+var locationLat = <%= @latarray %>
+
+let locationLong = []
+
+
+console.log(locationLat)
+console.log(locationLong)
+
+</script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLEMAPS_API_KEY']%>&callback=initMap"
 type="text/javascript">
 </script>
+
+
+<div id="map"></div>
