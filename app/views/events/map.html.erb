@@ -4,13 +4,14 @@
 <% @events.each do |event| %>
   <% @location = {
     lat: event.latitude,
-    lng: event.longitude
+    lng: event.longitude,
+    marker: event.name
     } %>
 
   <% @localarray.push(@location) %>
 <% end %>
-<%= puts "yoooo" + @localarray.to_s %>
 
+<%= puts "oooooooooo" + @localarray.to_s %>
 <script type="text/javascript">
   let locationTest = <%=raw @localarray.to_json %>
 

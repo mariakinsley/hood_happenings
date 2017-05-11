@@ -11,7 +11,7 @@ var map;
           zoom: 12
         });
         if (locationTest.constructor === Array) {
-          var infoWindow = new google.maps.InfoWindow();
+          var infowindow = new google.maps.InfoWindow();
 
           var marker, i;
 
@@ -25,11 +25,10 @@ var map;
            });
            google.maps.event.addListener(marker,'click',(function(marker, i) {
              return function() {
-               infowindow.setContent(locations[i][0]);
-               infoWindow.open(map, marker);
+               infowindow.setContent(locationTest[i].marker);
+               infowindow.open(map, marker);
              }
            })(marker, i));
-
           }
 
         } else {
