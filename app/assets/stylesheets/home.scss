@@ -4,6 +4,7 @@
 
 $mainfont: 'Quicksand', sans-serif;
 $accentcolor: #5ee5bc;
+$hovercolor: #8befd1;
 
 html, body {
   margin: 0;
@@ -12,6 +13,12 @@ html, body {
 
 .homeimage {
   width: 900px;
+}
+
+.maintitle {
+  font-size: 60px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 body {
@@ -72,7 +79,11 @@ input[type="submit"] {
   font-size: 20px;
   margin: 20px;
   padding: 10px;
-  // width: 120px;
+  background-color: $accentcolor;
+}
+
+input[type="submit"]:hover {
+  background-color: $hovercolor;
 }
 
 input[type="file"] {
