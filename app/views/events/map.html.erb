@@ -5,7 +5,8 @@
   <% @location = {
     lat: event.latitude,
     lng: event.longitude,
-    marker: event.name
+    marker: event.name,
+    eventid: event.id
     } %>
   <% @localarray.push(@location) %>
 <% end %>
