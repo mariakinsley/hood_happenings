@@ -3,12 +3,12 @@
     <%= f.label  :name, "Name of Event" %><br>
     <%= f.text_field :name, autofocus: true %><br>
     <%= f.label  :description, "Description of Event" %><br>
-    <%= f.text_field :description%><br>
+    <%= f.text_field :description %><br>
     <%= f.label :startdate,"Start Date" %><br>
-    <%= f.datetime_select :startdate %><br>
-    <%= f.label :enddate, "End Date"%><br>
-    <%= f.datetime_select :enddate%><br>
-    <%= f.label :location, "Neighborhood"%><br>
+    <%= f.datetime_select :startdate, {ampm: true} %><br>
+    <%= f.label :enddate, "End Date" %><br>
+    <%= f.datetime_select :enddate, {ampm: true} %><br>
+    <%= f.label :location, "Neighborhood" %><br>
     <%= f.select :location, ["Noho","Soho","Lower East Side", "Upper West  side", "Upper East Side", "West Village", "East Village", "Hell's Kitchen", "Financial District", "Wall St.", "Midtown", "Harlem", "Washington Heights", "Chelsea", "Tribeca", "Chinatown", "Murray Hill"] %><br>
     <%= f.label :streetaddress %><br>
     <%= f.text_field :streetaddress %><br>
@@ -18,8 +18,8 @@
     <%= f.select :state, ["New York"] %><br>
     <%= f.label :zip %><br>
     <%= f.text_field :zip %><br>
-    <%= f.label :cost, "Cost"%><br>
-    <%= f.number_field :cost%><br>
+    <%= f.label :cost, "Cost" %><br>
+    <%= f.number_field :cost %><br>
     <%= f.file_field :image %><br>
     <%= f.submit %>
   <% end %>

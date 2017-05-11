@@ -6,7 +6,6 @@ class PostsController < ApplicationController
   def index
     @lostposts = Post.where(variety: "lost")
     @foundposts = Post.where(variety: "found")
-
   end
 
   def new
@@ -27,6 +26,11 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    if @post.user_id == current_user.id
+    else
+      flash[:notice] = "You do not have access to that page."
+      redirect_to posts_path
+    end
   end
 
   def update
@@ -44,7 +48,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.destroy
       flash[:notice] = "Your post was deleted."
-      redirect_to root_path
+      redirect_to posts_path
     else
       flash[:alert] = "There was a problem deleting your post."
       render :edit

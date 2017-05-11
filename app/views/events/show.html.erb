@@ -6,11 +6,14 @@
   <%= @event.startdate.strftime"%d %B %Y %I:%M %p" %><br>
   <%= @event.enddate.strftime"%d %B %Y %I:%M %p" %><br>
   <% if @event.cost == 0 %>
-    FREE
+    FREE <br>
   <% else %>
     $<%= @event.cost %><br>
   <% end %>
-
+  <% if @event.user_id == current_user.id %>
+    <%= link_to "Edit", edit_event_path(@event.id), class: "linkbutt" %>
+  <% else %>
+  <% end %>
 </div>
 
 <script type="text/javascript">

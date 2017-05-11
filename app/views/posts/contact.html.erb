@@ -4,7 +4,7 @@
   <%= label_tag(:subject, "Subject") %><br>
   <%= text_field_tag(:subject) %><br>
   <%= label_tag(:content)%><br>
-  <%= text_area_tag(:content)%><br>
+  <%= text_area_tag(:content, nil, :rows => 10, :cols => 35 )%><br>
   <%= submit_tag("send") %>
 <% end %>
 </div>
