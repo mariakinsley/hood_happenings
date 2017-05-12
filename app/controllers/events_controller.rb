@@ -63,7 +63,7 @@ class EventsController < ApplicationController
   end
 
   def map
-    @events = Event.all
+    @events = Event.where('enddate >= ?', DateTime.now)
   end
 
   private
