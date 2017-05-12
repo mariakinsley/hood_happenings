@@ -11,14 +11,36 @@ html, body {
   height: 100%;
 }
 
+footer {
+  background-color: #202563;
+  height: 30px;
+  clear: both;
+}
+
 .homeimage {
   width: 900px;
 }
 
 .maintitle {
-  font-size: 60px;
+  font-size: 50px;
   text-align: center;
-  text-transform: uppercase;
+  font-family: 'Miniver', cursive;
+  background-color: $accentcolor;
+  border-radius: 50%;
+  width: 255px;
+  height: 255px;
+  color: white;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.title {
+  padding-top: 80px;
+
+}
+
+.logo {
+  width: 60px;
 }
 
 body {
