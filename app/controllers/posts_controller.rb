@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
     if @post.save
       flash[:notice] = "Your post was created!"
-      redirect_to posts_path
+      redirect_to :back
     else
       flash[:alert] = "There was a problem creating your post."
       render :new
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
     if @post.user_id == current_user.id
     else
       flash[:notice] = "You do not have access to that page."
-      redirect_to posts_path
+      redirect_to root_path
     end
   end
 
@@ -38,7 +38,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.update(post_params)
       flash[:notice] = "Your post has been updated."
-      redirect_to posts_path
+      redirect_to root_path
     else
       flash[:alert] = "There was a problem updating your post."
       render :edit
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.destroy
       flash[:notice] = "Your post was deleted."
-      redirect_to posts_path
+      redirect_to root_path
     else
       flash[:alert] = "There was a problem deleting your post."
       render :edit
@@ -74,7 +74,7 @@ class PostsController < ApplicationController
     response = sg.client.mail._('send').post(request_body: mail.to_json)
     puts response.status_code
     puts response.body
-    redirect_to posts_path
+    redirect_to root_path
   end
 
   private

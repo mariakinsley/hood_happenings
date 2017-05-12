@@ -1,5 +1,18 @@
 # README
 
+#Neighborly
+
+Ruby 2.4.0
+
+Gems used
+* Devise
+* Simple calendar
+* Geokit
+
+APIs used
+* Google Maps
+* SendGrid
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

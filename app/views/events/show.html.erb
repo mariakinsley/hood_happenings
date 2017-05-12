@@ -10,7 +10,7 @@
   <% else %>
     <%= number_to_currency(@event.cost) %><br>
   <% end %>
-  <% if @event.user_id == current_user.id %>
+  <% if current_user && @event.user_id == current_user.id %>
     <%= link_to "Edit", edit_event_path(@event.id), class: "linkbutt" %>
   <% else %>
   <% end %>
