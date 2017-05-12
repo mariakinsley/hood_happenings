@@ -20,6 +20,7 @@
     <%= f.text_field :zip %><br>
     <%= f.label :cost, "Cost" %><br>
     <%= f.number_field :cost %><br>
+    <%= f.label :image,  "<i class='fa fa-cloud-upload'></i>".html_safe + '  upload image', class: "customupload"%> <br>
     <%= f.file_field :image %><br>
     <%= f.submit %>
   <% end %>

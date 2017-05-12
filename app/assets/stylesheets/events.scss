@@ -4,7 +4,7 @@
 
 // calendar css
 
-$todaycolor: #fcdbe7;
+$todaycolor: #b4f7e3;
 .simple-calendar {
   table {
     -webkit-border-horizontal-spacing: 0px;
@@ -96,12 +96,18 @@ $todaycolor: #fcdbe7;
 // show page css
 .event {
   float: left;
-  width: 500px;
-  margin: 50px;
+  width: 550px;
+  height: 550px;
+  margin: 40px 20px 40px 50px;
   text-align: center;
   font-size: 20px;
+  border: 2px solid black;
+  background-color: #ededed;
 }
 
+.eventimage {
+  margin-top: 15px;
+}
 
 
 // map css
@@ -111,19 +117,19 @@ $todaycolor: #fcdbe7;
 }
 
 .showmap {
-  height: 500px;
+  height: 550px;
   margin: 0;
-  width: 500px;
+  width: 550px;
   float: right;
-  margin: 40px 80px 40px 40px;
+  margin: 40px 50px 40px 20px;
   border: 2px solid black;
 }
 
 .fullmap {
   height: 500px;
   margin: 0 auto;
-  width: 800px;
+  width: 70%;
   text-align: center;
   border: 2px solid black;
-
+  margin-bottom: 30px;
 }

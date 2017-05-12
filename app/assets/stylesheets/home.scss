@@ -87,10 +87,20 @@ input[type="submit"]:hover {
 }
 
 input[type="file"] {
-  text-transform: uppercase;
-  font-family: $mainfont;
+  display: none;
 }
 
+.customupload {
+  text-transform: uppercase;
+  font-family: $mainfont;
+  background-color: $accentcolor;
+  margin: 10px;
+  display: inline-block;
+}
+
+.customupload:hover {
+  background-color: $hovercolor;
+}
 
 label {
   font-size: 20px;
@@ -111,6 +121,11 @@ a {
   color: black;
 }
 
+a:hover {
+  color: $accentcolor;
+
+}
+
 .navlink {
   font-size: 20px;
   color: black;
@@ -119,6 +134,7 @@ a {
 
 .navlink:hover {
   background-color: $accentcolor;
+  color: black;
 }
 
 .dropbtn {
@@ -176,13 +192,18 @@ a {
 
 .linkbutt {
   text-align: center;
-  font-size: 15px;
+  font-size: 18px;
   margin: 10px;
   padding: 10px;
-  background-color: pink;
+  background-color: $accentcolor;
   width: 120px;
   color: black;
   display: inline-block;
+}
+
+.linkbutt:hover {
+  background-color: $hovercolor;
+  color: black;
 }
 
 .locallink {
@@ -195,25 +216,73 @@ a {
 
 // media queries
 @media (min-width: 300px) {
+  .event {
+    text-align: center;
+    float: none;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+  .showmap {
+    text-align: center;
+    float: none;
+    margin: 0 auto;
+    margin-bottom: 30px
+  }
 
 }
 
 /*larger than phablet*/
 
 @media (min-width:550px) {
-
+  .event {
+    text-align: center;
+    float: none;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+  .showmap {
+    text-align: center;
+    float: none;
+    margin: 0 auto;
+    margin-bottom: 30px
+  }
 
 }
 
 /*larger than tablet*/
 
 @media (min-width: 750px) {
+  .event {
+    text-align: center;
+    float: none;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+  .showmap {
+    text-align: center;
+    float: none;
+    margin: 0 auto;
+    margin-bottom: 30px
+  }
 
 }
 
 /*larger than desktop*/
 
 @media (min-width: 1000px) {
+  .event {
+    text-align: center;
+    float: none;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+  .showmap {
+    text-align: center;
+    float: none;
+    margin: 0 auto;
+    margin-bottom: 30px
+  }
+
 
 
 }
@@ -221,5 +290,23 @@ a {
 /*larger than desktop HD*/
 
 @media (min-width:1200px) {
+  .event {
+    float: left;
+    width: 550px;
+    height: 550px;
+    margin: 40px 20px 40px 50px;
+    text-align: center;
+    font-size: 20px;
+    border: 2px solid black;
+    background-color: #ededed;
+  }
+  .showmap {
+    height: 550px;
+    margin: 0;
+    width: 550px;
+    float: right;
+    margin: 40px 50px 40px 20px;
+    border: 2px solid black;
+  }
 
 }

@@ -26,8 +26,7 @@ var map;
            });
            google.maps.event.addListener(marker,'click',(function(marker, i) {
              return function() {
-               infowindow.setContent(
-               '<a href="/events/'+locationTest[i].eventid + '">' + locationTest[i].marker + '</a>'
+               infowindow.setContent('<a href="/events/'+locationTest[i].eventid + '">' + locationTest[i].marker + '</a>'
               );
                infowindow.open(map, marker);
              }

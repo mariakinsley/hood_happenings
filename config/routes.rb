@@ -4,12 +4,14 @@ Rails.application.routes.draw do
   get "/" => "home#index"
   root to: "home#index"
   resources :events, :except => [:index]
-  resources :posts
+  resources :posts, :except => [:index]
   get "/posts/:id/contact/" => "posts#contact"
 
   post "/posts/:id/contactname" => "posts#contactname"
 
   get "/events/location/:location" => "events#index"
+
+  get "/lostandfound/location/:location" => "posts#index"
 
   get "/map" => "events#map"
 

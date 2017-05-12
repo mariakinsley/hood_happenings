@@ -4,8 +4,9 @@ class PostsController < ApplicationController
 
 
   def index
-    @lostposts = Post.where(variety: "lost")
-    @foundposts = Post.where(variety: "found")
+    @locationposts = Post.where(location: params[:location])
+    @lostposts = @locationposts.where(variety: "lost")
+    @foundposts = @locationposts.where(variety: "found")
   end
 
   def new

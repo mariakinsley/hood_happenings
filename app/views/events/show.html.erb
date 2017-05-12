@@ -1,14 +1,14 @@
 <div class="event">
-  <%= image_tag @event.image.url(:medium) %><br>
+  <%= image_tag @event.image.url(:medium), class: "eventimage" %><br>
   <%= @event.name %><br>
   <%= @event.description %><br>
   <%= @event.location %><br>
-  <%= @event.startdate.strftime"%d %B %Y %I:%M %p" %><br>
-  <%= @event.enddate.strftime"%d %B %Y %I:%M %p" %><br>
+  <%= @event.startdate.strftime"%B %d, %Y %I:%M %p" %><br>
+  <%= @event.enddate.strftime"%B %d, %Y %I:%M %p" %><br>
   <% if @event.cost == 0 %>
     FREE <br>
   <% else %>
-    $<%= @event.cost %><br>
+    <%= number_to_currency(@event.cost) %><br>
   <% end %>
   <% if @event.user_id == current_user.id %>
     <%= link_to "Edit", edit_event_path(@event.id), class: "linkbutt" %>

@@ -40,6 +40,27 @@
           <%= link_to "Murray Hill", "/events/location/Murray Hill", class: "localnavlink" %><br>
         </div>
       </div>
+      <div class="dropdown">
+        <button class="dropbtn">Lost and Found </button>
+        <div class="dropdown-content">
+          <%= link_to "Noho", "/lostandfound/location/Noho", class: "localnavlink" %><br>
+          <%= link_to "Soho", "/lostandfound/location/Soho", class: "localnavlink" %><br>
+          <%= link_to "Lower East Side", "/lostandfound/location/Lower East Side", class: "localnavlink" %><br>
+          <%= link_to "Upper West Side", "/lostandfound/location/Upper West Side", class: "localnavlink" %><br>
+          <%= link_to "Upper East Side", "/lostandfound/location/Upper East Side", class: "localnavlink" %><br>
+          <%= link_to "West Village", "/lostandfound/location/West Village", class: "localnavlink" %><br>
+          <%= link_to "East Village", "/lostandfound/location/East Village", class: "localnavlink" %><br>
+          <%= link_to "Hell's Kitchen", "/events/location/Hell's Kitchen", class: "localnavlink" %><br>
+          <%= link_to "Financial District", "/events/location/Financial District", class: "localnavlink" %><br>
+          <%= link_to "Midtown", "/events/location/Midtown", class: "localnavlink" %><br>
+          <%= link_to "Harlem", "/events/location/Harlem", class: "localnavlink" %><br>
+          <%= link_to "Washington Heights", "/events/location/Washington Heights", class: "localnavlink" %><br>
+          <%= link_to "Chelsea", "/events/location/Chelsea", class: "localnavlink" %><br>
+          <%= link_to "Tribeca", "/events/location/Tribeca", class: "localnavlink" %><br>
+          <%= link_to "Chinatown", "/events/location/Chinatown", class: "localnavlink" %><br>
+          <%= link_to "Murray Hill", "/events/location/Murray Hill", class: "localnavlink" %><br>
+        </div>
+      </div>
       <% if user_signed_in? %>
         <%= link_to "Edit Account", edit_user_registration_path, :class => 'navlink' %>
         <%= link_to "New Event", new_event_path, :class => 'navlink' %>
