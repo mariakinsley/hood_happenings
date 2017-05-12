@@ -28,8 +28,8 @@
 #   database: myapp
 #   username: username
 #   password: ENV['DB_PASSWORD']
-#
-#
+# 
+
 
 default: &default
   adapter: postgresql
