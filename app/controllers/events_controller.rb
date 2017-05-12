@@ -22,7 +22,7 @@ class EventsController < ApplicationController
     @event.longitude = Geokit::Geocoders::GoogleGeocoder.geocode(params[:event][:streetaddress] + params[:event][:city] + params[:event][:state]).lng
     if @event.save
       flash[:notice] = "Your event was created!"
-      redirect_to event_path(@event.id)
+      redirect_to root_path
     else
       flash[:alert] = "There was a problem creating your event."
       render :new
