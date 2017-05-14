@@ -3,6 +3,7 @@
   <head>
     <title>Neighborly</title>
     <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
 
     <%= favicon_link_tag 'houseicon.png' %>
 
@@ -25,7 +26,7 @@
       <%= link_to "Home", root_path, :class => 'navlink'  %>
       <%= link_to "Events Map", "/map", :class => 'navlink' %>
       <div class="dropdown">
-        <div class="dropbtn">Event Calendar</div>
+        <div class="dropbtn" id="dropcal">Event Calendar</div>
         <div class="dropdown-content">
           <%= link_to "Noho", "/events/location/Noho", class: "localnavlink" %><br>
           <%= link_to "Soho", "/events/location/Soho", class: "localnavlink" %><br>
@@ -46,7 +47,7 @@
         </div>
       </div>
       <div class="dropdown">
-        <div class="dropbtn">Lost & Found </div>
+        <div class="dropbtn" id="droplost">Lost & Found </div>
         <div class="dropdown-content">
           <%= link_to "Noho", "/lostandfound/location/Noho", class: "localnavlink" %><br>
           <%= link_to "Soho", "/lostandfound/location/Soho", class: "localnavlink" %><br>

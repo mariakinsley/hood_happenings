@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
   var bigBurger = document.querySelector('.bigburger')
   var navLink = document.querySelectorAll('.navlink')
   var dropBtn = document.querySelectorAll('.dropbtn')
-
+  var dropCal = document.querySelector('#dropcal')
+  var dropLost = document.querySelector('#droplost')
 
   bigBurger.addEventListener( "click", function() {
     this.classList.toggle( "change" );
@@ -19,13 +20,25 @@ document.addEventListener("DOMContentLoaded", function (event) {
         navLink[i].style.display = 'block';
       }
     }
-    for (var i = 0; i < dropBtn.length; i++){
-      if (dropBtn[i].style.display === 'block') {
-        dropBtn[i].style.display = 'none';
-      } else {
-        dropBtn[i].style.display = 'block';
-      }
+    // for (var i = 0; i < dropBtn.length; i++){
+    //   if (dropBtn[i].style.display === 'block') {
+    //     dropBtn[i].style.display = 'none';
+    //   } else {
+    //     dropBtn[i].style.display = 'block';
+    //   }
+    // }
+    if (dropCal.style.display === 'block') {
+      dropCal.style.display = 'none';
+    } else {
+      dropCal.style.display = 'block';
     }
+    if (dropLost.style.display === 'block') {
+      dropLost.style.display = 'none';
+    } else {
+      dropLost.style.display = 'block';
+    }
+
+
 
   });
 

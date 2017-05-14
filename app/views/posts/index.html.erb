@@ -24,7 +24,7 @@
     <%= foundpost.name.upcase %><br>
     <%= foundpost.description %><br>
     <%= link_to "Contact", "/posts/#{foundpost.id}/contact", class: "linkbutt" %><br>
-    <% if foundpost.user_id == current_user.id %>
+    <% if current_user && foundpost.user_id == current_user.id %>
       <%= link_to "Edit", edit_post_path(foundpost.id), class: "linkbutt" %><br>
     <% else %>
     <% end %>
