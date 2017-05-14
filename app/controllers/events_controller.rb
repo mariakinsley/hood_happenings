@@ -3,6 +3,7 @@ class EventsController < ApplicationController
 
   def index
     puts "yoooooooo"+params[:location].inspect
+    @location = params[:location]
     @events = Event.where(location: params[:location])
   end
 

@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
 
   def index
+    @location = params[:location]
     @locationposts = Post.where(location: params[:location])
     @lostposts = @locationposts.where(variety: "lost")
     @foundposts = @locationposts.where(variety: "found")
