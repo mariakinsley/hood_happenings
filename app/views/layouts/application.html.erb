@@ -3,6 +3,7 @@
   <head>
     <title>Neighborly</title>
     <%= csrf_meta_tags %>
+     <!-- <meta name="viewport" content="width=device-width, initial-scale=0.6" /> -->
 
     <%= favicon_link_tag 'houseicon.png' %>
 
@@ -16,11 +17,16 @@
   </head>
 <header>
   <nav>
+    <div class="bigburger">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
     <div class="center">
       <%= link_to "Home", root_path, :class => 'navlink'  %>
       <%= link_to "Events Map", "/map", :class => 'navlink' %>
       <div class="dropdown">
-        <button class="dropbtn">Event Calendar</button>
+        <div class="dropbtn">Event Calendar</div>
         <div class="dropdown-content">
           <%= link_to "Noho", "/events/location/Noho", class: "localnavlink" %><br>
           <%= link_to "Soho", "/events/location/Soho", class: "localnavlink" %><br>
@@ -41,7 +47,7 @@
         </div>
       </div>
       <div class="dropdown">
-        <button class="dropbtn">Lost and Found </button>
+        <div class="dropbtn">Lost & Found </div>
         <div class="dropdown-content">
           <%= link_to "Noho", "/lostandfound/location/Noho", class: "localnavlink" %><br>
           <%= link_to "Soho", "/lostandfound/location/Soho", class: "localnavlink" %><br>
@@ -64,7 +70,7 @@
       <% if user_signed_in? %>
         <%= link_to "Edit Account", edit_user_registration_path, :class => 'navlink' %>
         <%= link_to "New Event", new_event_path, :class => 'navlink' %>
-        <%= link_to "New Post", new_post_path, :class => 'navlink' %>
+        <%= link_to "New Lost/Found Post", new_post_path, :class => 'navlink' %>
         <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navlink' %>
       <% else %>
         <%= link_to "Sign Up", new_user_registration_path, :class => 'navlink' %>
