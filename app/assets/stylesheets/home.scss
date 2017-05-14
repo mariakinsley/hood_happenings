@@ -262,12 +262,14 @@ hr {
     float: none;
     margin: 0 auto;
     margin-bottom: 30px;
+    width: 90%;
   }
   .showmap {
     text-align: center;
     float: none;
     margin: 0 auto;
-    margin-bottom: 30px
+    margin-bottom: 30px;
+    width: 90%;
   }
   .navlink {
     display: none;
@@ -291,6 +293,7 @@ hr {
   .bigburger {
     display: inline-block;
     cursor: pointer;
+    padding: 3px;
 }
 
 .bar1, .bar2, .bar3 {
@@ -317,6 +320,12 @@ hr {
     -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
     transform: rotate(45deg) translate(-8px, -8px) ;
 }
+.simple-calendar{
+  max-width: 100%;
+}
+.simple-calendar td{
+  padding: 0px;
+}
 
 
 
@@ -332,12 +341,15 @@ hr {
     float: none;
     margin: 0 auto;
     margin-bottom: 30px;
+    width: 90%;
+
   }
   .showmap {
     text-align: center;
     float: none;
     margin: 0 auto;
-    margin-bottom: 30px
+    margin-bottom: 30px;
+    width: 90%;
   }
   .navlink {
     display: none;
@@ -358,6 +370,7 @@ hr {
   .bigburger {
     display: inline-block;
     cursor: pointer;
+    padding: 3px;
   }
 
   .bar1, .bar2, .bar3 {
@@ -388,6 +401,11 @@ hr {
   .dropdown-content {
     width: 100%;
   }
+  .simple-calendar td{
+    padding: 0px;
+
+  }
+
 
 
 
@@ -401,12 +419,14 @@ hr {
     float: none;
     margin: 0 auto;
     margin-bottom: 30px;
+    width: 550px;
   }
   .showmap {
     text-align: center;
     float: none;
     margin: 0 auto;
-    margin-bottom: 30px
+    margin-bottom: 30px;
+    width: 550px;
   }
   .bigburger {
     display: none;
@@ -429,6 +449,10 @@ hr {
   .dropdown-content {
     min-width: 160px;
   }
+  .simple-calendar td{
+    padding: 6px 6px 60px 6px;
+  }
+
 
 
 }
@@ -441,12 +465,14 @@ hr {
     float: none;
     margin: 0 auto;
     margin-bottom: 30px;
+    width: 500px;
   }
   .showmap {
     text-align: center;
     float: none;
     margin: 0 auto;
-    margin-bottom: 30px
+    margin-bottom: 30px;
+    width: 500px;
   }
   .bigburger {
     display: none;
@@ -466,6 +492,10 @@ hr {
   #dropcal {
     display: inline-block;
   }
+  .simple-calendar td{
+    padding: 6px 6px 60px 6px;
+  }
+
 
 
 
@@ -512,6 +542,10 @@ hr {
   #dropcal {
     display: inline-block;
   }
+  .simple-calendar td{
+    padding: 6px 6px 60px 6px;
+  }
+
 
 
 }
